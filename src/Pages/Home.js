@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {  useState } from "react";
 import Table from "../Components/Table";
 
 const handleEdit = (item) => () => {
@@ -6,7 +6,7 @@ const handleEdit = (item) => () => {
   alert(JSON.stringify(item));
 };
 
-export const tableConstants = (handleEdit) => {
+export const tableConstants = () => {
   return [
     {
       title: "ID",
@@ -134,18 +134,18 @@ export const data2 = [
 ];
 const Home = () => {
   console.log(tableConstants());
-  const [isDark, setIsDark] = useEffect(false);
-  const [bordered, setBordered] = useEffect(true);
-  const [striped, setStriped] = useEffect(false);
-  const [hoverable, setHoverable] = useEffect(false);
+  const [isDark, setIsDark] = useState(true);
+  const [bordered, setBordered] = useState(true);
+  const [striped, setStriped] = useState(true);
+  const [hoverable, setHoverable] = useState(true);
 
   return (
     <React.Fragment>
-      <Table cols={tableConstants(handleEdit)} data={data} />
-      <Table cols={tableConstants(handleEdit)} data={data} isDark />
-      <Table cols={tableConstants(handleEdit)} data={data2} bordered={false} />
-      <Table cols={tableConstants(handleEdit)} data={data} striped />
-      <Table cols={tableConstants(handleEdit)} data={data2} hoverable />
+      <Table cols={tableConstants()} data={data} />
+      <Table cols={tableConstants()} data={data} isDark={isDark} />
+      <Table cols={tableConstants()} data={data2} bordered={bordered} />
+      <Table cols={tableConstants()} data={data} striped={striped} />
+      <Table cols={tableConstants()} data={data2} hoverable={hoverable} />
     </React.Fragment>
   );
 };

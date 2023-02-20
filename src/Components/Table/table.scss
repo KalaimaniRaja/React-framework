@@ -1,0 +1,22 @@
+table {
+  font-size: 14px;
+  line-height: 24px;
+  border: 1px solid;
+  text-align: left;
+
+  thead {
+    background: #ccc;
+  }
+
+  th,
+  td {
+    padding: 4px 10px;
+  }
+
+  &.table-dark {
+    thead {
+      background: #333;
+      color: #fff;
+    }
+  }
+}
