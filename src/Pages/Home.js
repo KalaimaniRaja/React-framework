@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Table from "../components/table";
 import StarRating from "../components/ratings";
 import ImageSlider from "../components/imageSlider";
+import Upload from "../components/upload";
 
 const handleEdit = (item) => () => {
   // write your logic
@@ -180,9 +181,12 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      <ImageSlider slides={SliderData} />
+      {/* <ImageSlider slides={SliderData} /> */}
       <StarRating name="controlled" onChange={ratingEvent} />
       <StarRating name="read-only" value={4} />
+
+      <Upload type="image" />
+      <Upload type="pdf" />
 
       <Table cols={tableConstants()} data={data} />
       <Table cols={tableConstants()} data={data} isDark={isDark} />

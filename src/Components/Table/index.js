@@ -1,12 +1,12 @@
 import React from "react";
-import './table.scss';
+import "./table.scss";
 
 const Table = ({ cols, data, bordered, hoverable, striped, isDark }) => {
   return (
     <table
-      className={`table ${bordered ? "table-bordered" : ""} ${
-        hoverable ? "table-hover": ""
-      } ${striped ? "table-striped": ""} ${isDark ? "table-dark": ""}`}
+      className={`${"table "}${bordered ? "table-bordered" : ""}${
+        hoverable ? "table-hover" : ""
+      }${striped ? "table-striped" : ""}${isDark ? "table-dark" : ""}`.trim()}
     >
       <thead>
         <tr>
