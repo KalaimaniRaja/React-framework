@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./imageSlider.scss";
 
 export default function ImageSlider({ slides }) {
-  console.log(slides, "slides");
   const [currentSlide, setCurrentSlide] = useState(0);
   const length = slides.length;
 
@@ -23,7 +22,10 @@ export default function ImageSlider({ slides }) {
       ImageSlider
       {slides.map((slide, index) => {
         return (
-          <div className={index === currentSlide ? "slide active" : "slide"}>
+          <div
+            className={index === currentSlide ? "slide active" : "slide"}
+            key={index}
+          >
             {index === currentSlide && (
               <img src={slide.image} alt={slide.name} className="slide-img" />
             )}

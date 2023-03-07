@@ -1,0 +1,26 @@
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px 12px;
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+
+  > [class^="icon-"] {
+    margin: 2px 0 0px 10px;
+    line-height: 1;
+  }
+}
+
+.accordion-body {
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.accordion-item {
+  background-color: #ccc;
+  margin: 10px 0;
+}

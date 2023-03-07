@@ -5,18 +5,15 @@ const StarRating = (props) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [ratingValue, setRatingValue] = useState(0);
-
-  console.log(props);
   const { name, value, onChange } = props;
-  const [controlled, setControlled] = useState(false)
-  const [readOnly, setReadOnly] = useState(false)
+  const [controlled, setControlled] = useState(false);
+  const [readOnly, setReadOnly] = useState(false);
 
   useEffect(() => {
-    if(name === "controlled") {
-    setControlled(true);
-    }
-    else if (name === "read-only") {
-    setReadOnly(true)
+    if (name === "controlled") {
+      setControlled(true);
+    } else if (name === "read-only") {
+      setReadOnly(true);
     }
   }, []);
 
@@ -25,9 +22,9 @@ const StarRating = (props) => {
   }, [value]);
 
   useEffect(() => {
-    {controlled  &&
-    onChange(rating);
-  }
+    {
+      controlled && onChange(rating);
+    }
   }, [rating]);
   return (
     <div className="star-rating">
@@ -51,7 +48,7 @@ const StarRating = (props) => {
         </>
       )}
 
-      {readOnly  && (
+      {readOnly && (
         <>
           {[...Array(5)].map((star, index) => {
             index += 1;
